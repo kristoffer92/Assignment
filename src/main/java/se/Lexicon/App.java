@@ -8,6 +8,7 @@ public class App<Public>
     public static void main(String[] args ) {
         int operator = -1;
         boolean loop = true;
+        
         while(loop) {
             boolean gotResult = true;
             int result = 0;
