@@ -5,88 +5,54 @@ import java.util.Scanner;
 public class App<Public>
 {
     public static Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args ) {
         int operator = -1;
         boolean loop = true;
-
         while(loop) {
+            boolean gotResult = true;
+            int result = 0;
             System.out.println("Calculator");
             System.out.println("Make an option:\n1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n5.Modulus\n6.Quit");
             operator = scanner.nextInt();
-
             switch (operator) {
                 case 1:
-                    makeAddition();
+                    result = makeAddition(getNumber("first"), getNumber("second"));
                     break;
                 case 2:
-                    makeSubtraction();
+                    result = makeSubtraction(getNumber("first"), getNumber("second"));
                     break;
                 case 3:
-                    makeMultiplication();
+                    result = makeMultiplication(getNumber("first"), getNumber("second"));
                     break;
                 case 4:
-                    makeDivision();
+                    result = makeDivision(getNumber("first"), getNumber("second"));
                     break;
                 case 5:
-                    makeModulus();
+                    result = makeModulus(getNumber("first"), getNumber("second"));
                     break;
                 case 6:
                     loop = false;
                     break;
                 default:
+                    gotResult = false;
                     System.out.println("Error");
             }//End of Switch
+            if (gotResult && loop) {
+                System.out.println("Your result\n " + result);
+            }//End of Switch
         }//End of While
-    }//End of main
-    public static int getNumber(String nameOfNumber)
-    {
-        System.out.println("Enter " + nameOfNumber + " number ");
-        return scanner.nextInt();
-    }
-    public static int makeAddition(){
-        int numberOne;
-        int numberTwo;
-        String result = "Your result is\n";
-        numberOne = getNumber("first");
-        numberTwo = getNumber("second");
-        System.out.println(result + (numberOne+numberTwo));
-        return numberOne+numberTwo;
-    }
-    public static int makeSubtraction(){
-        int numberOne;
-        int numberTwo;
-        String result = "Your result is\n";
-        numberOne = getNumber("first");
-        numberTwo = getNumber("second");
-        System.out.println(result + (numberOne-numberTwo));
-        return numberOne-numberTwo;
-    }
-    public static int makeDivision(){
-        int numberOne;
-        int numberTwo;
-        String result = "Your result is\n";
-        numberOne = getNumber("first");
-        numberTwo = getNumber("second");
-        System.out.println(result +(numberOne/numberTwo));
-        return numberOne/numberTwo;
-    }
-    public static int makeMultiplication(){
-        int numberOne;
-        int numberTwo;
-        String result = "Your result is\n";
-        numberOne = getNumber("first");
-        numberTwo = getNumber("second");
-        System.out.println(result + (numberOne*numberTwo));
-        return numberOne*numberTwo;
-    }
-    public static int makeModulus(){
-        int numberOne;
-        int numberTwo;
-        String result = "Your result is\n";
-        numberOne = getNumber("first");
-        numberTwo = getNumber("second");
-        System.out.println(result +(numberOne%numberTwo));
-        return numberOne%numberTwo;
-    }//End of methods
-}//End of app
+    }//End of Main
+    public static int getNumber(String Name){
+        System.out.println("Enter " + Name + " number ");
+        return scanner.nextInt(); }
+    public static int makeAddition(int numOne, int numTwo){
+        return numOne+numTwo; }
+    public static int makeSubtraction(int numOne, int numTwo){
+        return numOne-numTwo; }
+    public static int makeDivision(int numOne, int numTwo){
+        return numOne/numTwo; }
+    public static int makeMultiplication(int numOne, int numTwo){
+        return numOne*numTwo; }
+    public static int makeModulus(int numOne, int numTwo){
+        return numOne%numTwo; }
+}//End of App
