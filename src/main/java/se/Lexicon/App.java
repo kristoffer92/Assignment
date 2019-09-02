@@ -7,6 +7,12 @@ public class App<Public>
     public static void main(String[] args ) {
         int operator = -1;
         boolean loop = true;
+        int[] numbersOne = {8,4,7};
+        int sumOne = makeAdd(numbersOne);
+        System.out.println("The total sum: "+sumOne);
+        int[] numbersTwo = {4,2,3};
+        int sumTwo = makeSub(numbersTwo);
+        System.out.println("The total sum: "+sumTwo);
 
         while(loop) {
             boolean gotResult = true;
@@ -44,7 +50,7 @@ public class App<Public>
     public static int getNumber(String Name){
         System.out.println("Enter " + Name + " number ");
         return scanner.nextInt(); }
-    public static int makeAddition(int numOne, int numTwo) {
+    public static int makeAddition(int numOne, int numTwo){
         return numOne+numTwo; }
     public static int makeSubtraction(int numOne, int numTwo){
         return numOne-numTwo; }
@@ -58,5 +64,23 @@ public class App<Public>
     public static int makeMultiplication(int numOne, int numTwo){
         return numOne*numTwo; }
     public static int makeModulus(int numOne, int numTwo){
-        return numOne%numTwo; }
+        return numOne%numTwo;
+    }
+    public static int makeAdd(int[] numbersOne){
+        int sumOne = 0;
+        for(int numB : numbersOne)
+        {
+            //sum += num;
+            sumOne = sumOne + numbersOne;
+        }
+        return sumOne;
+    }
+    public static int makeSub(int[] numbersTwo){
+        int sumTwo = 0;
+        for(int numB : numbersTwo)
+        {
+            sumTwo = sumTwo - numbersTwo;
+        }
+        return sumTwo;
+    }
 }//End of App

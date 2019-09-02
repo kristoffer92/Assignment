@@ -42,4 +42,9 @@ public class AppTest
         int result = App.makeModulus(numOne, numTwo);
         Assert.assertEquals(2, result);
     }
+    @Test//Testing makeAdd
+    public void test_makeAdd(){
+
+    }
+
 }
