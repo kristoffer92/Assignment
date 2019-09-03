@@ -43,8 +43,15 @@ public class AppTest
         Assert.assertEquals(2, result);
     }
     @Test//Testing makeAdd
-    public void test_makeAdd(){
-
+    public void test_makeAddArray(){
+        int[] numbersOne = {8, 4, 7};
+        int result = App.makeAddition(numbersOne);
+        Assert.assertEquals(19 , result);
     }
-
+    @Test//Testing makeSub
+    public void test_makeSubArray(){
+        int[] numbersTwo = {4, 2, 3};
+        int result = App.makeSubtraction(numbersTwo);
+        Assert.assertEquals(-9, result);
+    }
 }

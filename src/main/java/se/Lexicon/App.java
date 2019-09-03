@@ -8,10 +8,10 @@ public class App<Public>
         int operator = -1;
         boolean loop = true;
         int[] numbersOne = {8,4,7};
-        int sumOne = makeAdd(numbersOne);
+        int sumOne = makeAddition(numbersOne);
         System.out.println("The total sum: "+sumOne);
         int[] numbersTwo = {4,2,3};
-        int sumTwo = makeSub(numbersTwo);
+        int sumTwo = makeSubtraction(numbersTwo);
         System.out.println("The total sum: "+sumTwo);
 
         while(loop) {
@@ -66,20 +66,19 @@ public class App<Public>
     public static int makeModulus(int numOne, int numTwo){
         return numOne%numTwo;
     }
-    public static int makeAdd(int[] numbersOne){
+    public static int makeAddition(int[] numbersOne){
         int sumOne = 0;
         for(int numB : numbersOne)
         {
-            //sum += num;
-            sumOne = sumOne + numbersOne;
+            sumOne = sumOne + numB;
         }
         return sumOne;
     }
-    public static int makeSub(int[] numbersTwo){
+    public static int makeSubtraction(int[] numbersTwo){
         int sumTwo = 0;
         for(int numB : numbersTwo)
         {
-            sumTwo = sumTwo - numbersTwo;
+            sumTwo = sumTwo - numB;
         }
         return sumTwo;
     }
